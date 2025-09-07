@@ -1,0 +1,9 @@
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-2
+hostnames:
+  - tag:Name          # Use the value of the "Name" tag as hostname
+filters:
+  instance-state-name: running
+compose:
+  ansible_host: public_ip_address  # Connect to instance by its public IP

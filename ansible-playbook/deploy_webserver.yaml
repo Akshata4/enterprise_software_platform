@@ -1,45 +1,68 @@
 ---
-- name: Deploy Nginx webserver on Ubuntu AWS VM1
+- name: Deploy Nginx webserver on AWS VMs
   hosts: aws
   become: yes
-  vars:
-    vm_name: "VM1"
   tasks:
     - name: Update apt cache
-      ansible.builtin.apt:
+      apt:
         update_cache: yes
 
     - name: Install nginx
-      ansible.builtin.apt:
+      apt:
         name: nginx
         state: present
 
     - name: Configure nginx to listen on port 8080
-      ansible.builtin.template:
+      template:
         src: nginx_custom.conf.j2
         dest: /etc/nginx/sites-available/default
-        owner: root
-        group: root
         mode: '0644'
       notify: Restart nginx
 
-    - name: Create custom index.html
-      ansible.builtin.template:
+    - name: Create custom index.html with dynamic VM suffix
+      template:
         src: index.html.j2
         dest: /var/www/html/index.html
         owner: www-data
         group: www-data
         mode: '0644'
-    
-    - name: Ensure nginx service is started and enabled
-      ansible.builtin.service:
+      vars:
+        vm_suffix: "{{ inventory_hostname[-1] }}"
+
+    - name: Ensure nginx is started and enabled
+      service:
         name: nginx
         state: started
-        enabled: true
+        enabled: yes
 
   handlers:
     - name: Restart nginx
-      ansible.builtin.service:
+      service:
         name: nginx
         state: restarted
 
+
+- name: Un-deploy Nginx webserver on AWS VMs
+  hosts: aws
+  become: yes
+  tasks:
+    - name: Stop nginx service
+      service:
+        name: nginx
+        state: stopped
+        enabled: no
+
+    - name: Remove nginx package
+      apt:
+        name: nginx
+        state: absent
+
+    - name: Remove index.html
+      file:
+        path: /var/www/html/index.html
+        state: absent
+
+    - name: Remove nginx site config
+      file:
+        path: /etc/nginx/sites-available/default
+        state: absent
