@@ -1,0 +1,8 @@
+- hosts: aws
+  tasks:
+    - name: Ensure latest updates are installed
+      become: yes
+      apt:
+        name: "*"
+        state: latest
+
