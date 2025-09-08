@@ -35,6 +35,6 @@ ansible-playbook/
 ├── templates/
 │   ├── nginx_custom.conf.j2
 │   └── index.html.j2
-└── screenshots/
+└── test/
 
 
