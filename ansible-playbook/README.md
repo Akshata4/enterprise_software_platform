@@ -2,6 +2,8 @@
 
 ## Demo of the project
 
+[Watch the demo on SJSU OneDrive](https://sjsu0-my.sharepoint.com/:v:/g/personal/akshata_madavi_sjsu_edu/EZ5Zlv4B3NBNsV9fPQNuXF4BiPQxkiuwrSwkLww-Lpgcpw?e=ayyenf)
+
 <video src="https://raw.githubusercontent.com/Akshata4/enterprise_software_platform/refs/heads/main/ansible-playbook/video/video1816555058.mp4" width="640" height="360" controls></video>
 
 <video width="640" height="360" controls>
