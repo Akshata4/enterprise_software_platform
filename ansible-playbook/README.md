@@ -2,7 +2,7 @@
 
 ## Demo of the project
 
-<video src="video/video1816555058.mp4" width="320" height="240" controls></video>
+<video src="https://raw.githubusercontent.com/Akshata4/enterprise_software_platform/refs/heads/main/ansible-playbook/video/video1816555058.mp4" width="640" height="360" controls></video>
 
 
 ## Project Overview
