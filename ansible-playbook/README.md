@@ -4,6 +4,11 @@
 
 <video src="https://raw.githubusercontent.com/Akshata4/enterprise_software_platform/refs/heads/main/ansible-playbook/video/video1816555058.mp4" width="640" height="360" controls></video>
 
+<video width="640" height="360" controls>
+  <source src="https://raw.githubusercontent.com/Akshata4/enterprise_software_platform/refs/heads/main/ansible-playbook/video/video1816555058.mp4" type="video/mp4">
+</video>
+
+
 
 ## Project Overview
 This project automates the deployment of Nginx webservers on two AWS Ubuntu EC2 instances (`esp-v1` and `esp-v2`) running in the `us-east-2` region. Each webserver listens on port 8080 and serves a custom web page showing the message:
