@@ -28,11 +28,13 @@ This project automates the deployment of Nginx webservers on two AWS Ubuntu EC2 
 - Uses Jinja2 templates in the `templates` directory for Nginx config (`nginx_custom.conf.j2`) and web page (`index.html.j2`).
 
 ## Directory Structure
-ansible-webserver-project/
+ansible-playbook/
 │
 ├── deploy_webserver.yaml
 ├── inventory.ini
 ├── templates/
-│ ├── nginx_custom.conf.j2
-│ └── index.html.j2
+│   ├── nginx_custom.conf.j2
+│   └── index.html.j2
+└── screenshots/
+
 
