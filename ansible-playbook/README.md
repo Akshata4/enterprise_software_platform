@@ -1,5 +1,10 @@
 # Ansible Automation: Webserver Deployment on AWS EC2
 
+## Demo of the project
+
+<video src="video/video1816555058.mp4" width="320" height="240" controls></video>
+
+
 ## Project Overview
 This project automates the deployment of Nginx webservers on two AWS Ubuntu EC2 instances (`esp-v1` and `esp-v2`) running in the `us-east-2` region. Each webserver listens on port 8080 and serves a custom web page showing the message:
 
@@ -28,6 +33,7 @@ This project automates the deployment of Nginx webservers on two AWS Ubuntu EC2 
 - Uses Jinja2 templates in the `templates` directory for Nginx config (`nginx_custom.conf.j2`) and web page (`index.html.j2`).
 
 ## Directory Structure
+```bash
 ansible-playbook/
 │
 ├── deploy_webserver.yaml
@@ -36,5 +42,5 @@ ansible-playbook/
 │   ├── nginx_custom.conf.j2
 │   └── index.html.j2
 └── test/
-
+```
 
